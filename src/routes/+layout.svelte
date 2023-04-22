@@ -5,9 +5,9 @@
 </script>
 
 <div class="flex flex-col min-h-screen">
+  <Navbar />
   <main class="flex-grow">
-    <Navbar />
     <slot />
-    <Footer />
   </main>
+  <Footer />
 </div>
