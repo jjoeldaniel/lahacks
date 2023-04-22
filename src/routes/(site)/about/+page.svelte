@@ -8,11 +8,9 @@
     <div class="relative h-72 flex items-center justify-center mt-5">
         <div class="absolute inset-0 bg-hero bg-bottom sm:bg-left-bottom opacity-70"></div>
         <div class="relative">
-            <h1 class="text-5xl text-center font-bold text-white">About Trip Finder</h1>
+            <h1 class="text-5xl text-center font-bold text-white sm:text-4xl">About Trip Finder</h1>
         </div>
     </div>
-    
-
     
     <div class="h-fit m-16 items-center bg-slate-600 rounded-md flex flex-col justify-center">
         <div class="w-full flex items-start ml-10">
