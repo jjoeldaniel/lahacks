@@ -11,7 +11,7 @@
   
   
   <div class="bg-blue-500">
-    <input type="text" bind:value={searchTerm} />
+    <input class="" type="text" bind:value={searchTerm} />
     <button class="" on:click={handleSearch}>Search</button>
   </div>
   
