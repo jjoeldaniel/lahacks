@@ -84,10 +84,10 @@
   class="h-screen w-full overflow-hidden flex items-center justify-center bg-slate-800"
   on:submit|preventDefault={() => handleSearch()}
 >
-  <div class="grid grid-cols-6 row-start-5 gap-4 w-3/4 place-items-center">
+  <div class="grid grid-cols-6 w-3/4 place-items-center gap-x-1 gap-y-2">
     <input
       id="search-input"
-      class="bg-gray-600 col-span-5 px-4 py-2 w-full rounded-lg text-white"
+      class="bg-gray-600 col-span-5 px-2 py-2 w-full rounded-lg text-white"
       type="text"
       placeholder="New York, Queens NY"
       on:input={filterLocations}
@@ -99,38 +99,39 @@
     >
       Search
     </button>
-  </div>
-  <!-- show the list of matches below the search bar -->
-  {#if filteredLocations.length > 0}
-    <div class="absolute bg-gray-300 w-3/4 rounded-lg">
-      {#each filteredLocations as location, i}
-        <!-- on click, set the value of the search bar to the location and close the list -->
 
-        <!-- if i === hiLiteIndex, make bold -->
-        {#if i === hiLiteIndex}
-          <div
-            class="p-2 hover:bg-gray-400 cursor-pointer"
-            style="font-weight: bold"
-            on:click={() => {
-              setInputVal(location);
-            }}
-          >
-            {location}
-          </div>
-        {/if}
-        {#if i != hiLiteIndex}
-          <div
-            class="p-2 cursor-pointer"
-            on:submit={() => {
-              goto(location);
-            }}
-            on:click={() => {
-              setInputVal(location);
-            }}
-          >
-            {location}
-          </div>{/if}
-      {/each}
-    </div>
-  {/if}
+    <!-- show the list of matches below the search bar -->
+    {#if filteredLocations.length > 0}
+      <div class="bg-gray-300 w-full rounded-lg col-span-5">
+        {#each filteredLocations as location, i}
+          <!-- on click, set the value of the search bar to the location and close the list -->
+
+          <!-- if i === hiLiteIndex, make bold -->
+          {#if i === hiLiteIndex}
+            <div
+              class="p-2 hover:bg-gray-400 cursor-pointer"
+              style="font-weight: bold"
+              on:click={() => {
+                setInputVal(location);
+              }}
+            >
+              {location}
+            </div>
+          {/if}
+          {#if i != hiLiteIndex}
+            <div
+              class="p-2 cursor-pointer"
+              on:submit={() => {
+                goto(location);
+              }}
+              on:click={() => {
+                setInputVal(location);
+              }}
+            >
+              {location}
+            </div>{/if}
+        {/each}
+      </div>
+    {/if}
+  </div>
 </form>
