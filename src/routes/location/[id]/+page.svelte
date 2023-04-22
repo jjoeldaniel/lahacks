@@ -5,9 +5,9 @@
   import Papa from "papaparse";
   import { onMount } from "svelte";
 
-  let city = "";
-  let county = "";
-  let state_id = "";
+  let city = "New York City";
+  let county = "New York";
+  let state_id = "NY";
 
   // Load the CSV file using fetch in onMount
   onMount(async () => {
@@ -21,10 +21,20 @@
       complete: (results) => {
         results.data.forEach((row) => {
           if (data.id == row.ID) {
-            console.log(row.city);
             city = row.city;
             county = row.county_name;
             state_id = row.state_id;
+
+            // post to server
+            // TODO: Fix this
+            let response = fetch("/location/default", {
+              method: "POST",
+              headers: {
+                "Content-Type": "text/plain",
+              },
+              body: { city } + "," + { county } + "," + { state_id },
+            });
+            console.log(response);
           }
         });
       },
@@ -40,7 +50,7 @@
   class="h-screen w-full overflow-hidden flex items-center justify-center"
   style="background-color: white"
 >
-  <h1 class="font-bold text-3xl">{data.id}</h1>
+  <h1 class="font-bold text-3xl">{city}, {county}, {state_id}</h1>
 
   <ul>
     <li>

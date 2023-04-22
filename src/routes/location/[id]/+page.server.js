@@ -1,4 +1,4 @@
-const { Configuration, OpenAIApi } = require("openai");
+import { Configuration, OpenAIApi } from 'openai';
 import { API_KEY } from '$env/static/private';
 
 const configuration = new Configuration({
@@ -9,6 +9,19 @@ const openai = new OpenAIApi(configuration);
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ params }) {
     return {
-        id: params.id
+        id: params.id,
     };
 }
+
+/** @type {import('./$types').Actions} */
+export const actions = {
+    default: async (event) => {
+        // parse the request body
+        // TODO: Finish this
+        const data = await event.request.body
+        return {
+            data: "1234"
+        };
+
+    }
+};
