@@ -1,7 +1,7 @@
 <script>    
 
 </script>
- 
+ <div class = "bg-gradient-to-t from-gray-300 via-slate-500 to-gray-700 to-80%">
  <div class = "wrapper"> 
  <div class = "coltitle">
 
@@ -30,14 +30,13 @@ The Website collects only emails of authorized users and does not store password
 The Website is committed to protecting the privacy of its users and ensuring that their personal information is secure.</div>
 </div>
 </div>
-
+</div>
 <style>  
 
 .wrapper
 {
     width:screen;
     height: 100vh;
-    background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
 
 }
 .privacy {      
@@ -45,10 +44,12 @@ The Website is committed to protecting the privacy of its users and ensuring tha
     width: 200px;            
     padding: 8px;    
     font-size: 28px; 
-    text-align: justify;   
+    text-align: justify;  
+    color: white; 
 }    
 
 .pp {      
+    color: white;
     margin: auto;
     width: 60%;      
     padding: 8px;      
@@ -56,9 +57,11 @@ The Website is committed to protecting the privacy of its users and ensuring tha
     font-size: 14px;    
     font-weight: 400;
     text-align: justify
+
 }   
 
 .coltitle {
+    color: white;
     margin: auto;
     font-size: 20px;
     width: 58%;
