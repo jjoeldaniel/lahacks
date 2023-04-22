@@ -1,6 +1,5 @@
 <!-- SearchBar.svelte -->
 <script>
-  import { redirect } from "@sveltejs/kit";
   import "../app.css";
   export let onSearch;
   let searchTerm = "";
@@ -81,7 +80,8 @@
 <svelte:window on:keydown={navigateList} />
 
 <form
-  class="h-screen w-full overflow-hidden flex items-center justify-center bg-slate-800"
+  style="background-color: #edf2fb"
+  class="h-screen w-full overflow-hidden flex items-center justify-center"
   on:submit|preventDefault={() => handleSearch()}
 >
   <div class="grid grid-cols-6 row-start-5 gap-4 w-3/4 place-items-center">
@@ -109,8 +109,8 @@
         <!-- if i === hiLiteIndex, make bold -->
         {#if i === hiLiteIndex}
           <div
-            class="p-2 hover:bg-gray-400 cursor-pointer"
-            style="font-weight: bold"
+            class="p-2 cursor-pointer bg-blue-500"
+            style="font-weight: bold; color: white;"
             on:click={() => {
               setInputVal(location);
             }}

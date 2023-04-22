@@ -2,7 +2,7 @@
   let src = "/plane.png";
 </script>
 
-<div class="pb-12 px-10 pt-4 text-right bg-slate-700 text-white">
+<div class="pb-12 px-10 pt-4 text-right bg-blue-600 text-white">
   <div class="float-left pl-4 pb-0 font-bold text-xl">
     <a href="/" class="button">Trip Finder</a>
   </div>
