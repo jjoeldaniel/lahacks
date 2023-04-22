@@ -1,5 +1,6 @@
 <!-- SearchBar.svelte -->
 <script>
+    import "../app.css";
     export let onSearch;
     let searchTerm = "";
     
@@ -9,8 +10,8 @@
   </script>
   
   
-  <div>
+  <div class="bg-blue-500">
     <input type="text" bind:value={searchTerm} />
-    <button on:click={handleSearch}>Search</button>
+    <button class="" on:click={handleSearch}>Search</button>
   </div>
   
