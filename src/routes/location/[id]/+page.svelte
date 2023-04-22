@@ -5,7 +5,6 @@
   import Papa from "papaparse";
   import { onMount } from "svelte";
 
-  let hashmap = {};
   let city = "";
   let county = "";
   let state_id = "";
@@ -38,8 +37,20 @@
 </svelte:head>
 
 <div
-  class="h-screen w-full overflow-hidden flex items-center justify-center bg-slate-800"
+  class="h-screen w-full overflow-hidden flex items-center justify-center"
+  style="background-color: white"
 >
-  <h1 class="text-white font-bold text-2xl">{data.id}</h1>
-  <p>{city}, {county} {state_id}</p>
+  <h1 class="font-bold text-3xl">{data.id}</h1>
+
+  <ul>
+    <li>
+      <h2 class="font-bold text-2xl">About</h2>
+    </li>
+    <li>
+      <h2 class="font-bold text-2xl">History</h2>
+    </li>
+    <li>
+      <h2 class="font-bold text-2xl">Activities</h2>
+    </li>
+  </ul>
 </div>
