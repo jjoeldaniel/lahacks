@@ -80,7 +80,7 @@
 <svelte:window on:keydown={navigateList} />
 
 <form
-  class="h-screen w-full overflow-hidden flex items-center justify-center"
+  class="absolute inset-0 w-full overflow-auto flex items-center justify-center"
   on:submit|preventDefault={() => handleSearch()}
 >
   <div class="relative w-3/4">
