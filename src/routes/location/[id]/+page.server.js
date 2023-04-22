@@ -1,5 +1,5 @@
 /** @type {import('./$types').PageServerLoad} */
-export function load({ params }) {
+export async function load({ params }) {
     return {
         id: params.id
     };
