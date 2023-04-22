@@ -1,7 +1,7 @@
 <script>    
-
+import Maps from "../../../components/Maps.svelte";
 </script>
- <div class = "">
+ <div class = "bg-gradient-to-t from-gray-300 via-slate-500 to-gray-700 to-80%">
  <div class = "wrapper"> 
  <div class = "coltitle">
 

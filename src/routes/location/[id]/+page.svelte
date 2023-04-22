@@ -4,12 +4,14 @@
 
   import Papa from "papaparse";
   import { onMount } from "svelte";
+ import Maps from "../../../components/Maps.svelte";
+  
+ 
 
   let hashmap = {};
   let city = "";
   let county = "";
   let state_id = "";
-
   // Load the CSV file using fetch in onMount
   onMount(async () => {
     const response = await fetch("../uscities.csv");
@@ -31,6 +33,9 @@
       },
     });
   });
+
+  export let location;
+
 </script>
 
 <svelte:head>
@@ -42,4 +47,7 @@
 >
   <h1 class="text-white font-bold text-2xl">{data.id}</h1>
   <p>{city}, {county} {state_id}</p>
+
+  <Maps location={city}+{county} /> 
+
 </div>
