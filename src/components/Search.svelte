@@ -1,17 +1,18 @@
 <!-- SearchBar.svelte -->
 <script>
-    import "../app.css";
-    export let onSearch;
-    let searchTerm = "";
-    
-    const handleSearch = () => {
-      onSearch(searchTerm);
-    };
-  </script>
-  
-  
-  <div class="bg-blue-500">
-    <input class="" type="text" bind:value={searchTerm} />
-    <button class="" on:click={handleSearch}>Search</button>
-  </div>
-  
+  import "../app.css";
+  export let onSearch;
+  let searchTerm = "";
+
+  const handleSearch = () => {
+    onSearch(searchTerm);
+  };
+</script>
+
+<main class="h-screen w-screen overflow-hidden flex items-center justify-center bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%">
+    <div class="grid grid-cols-6 row-start-5 gap-4 w-3/4 place-items-center">
+      <input class="bg-gray-600 col-span-5  px-4 py-2 w-full rounded-lg text-white" type="text" bind:value={searchTerm} />
+      <button class="col-start-6 px-4 py-2 bg-blue-500 text-white hover:bg-blue-600 rounded-lg" on:click={handleSearch}>Search</button>
+    </div>   
+</main>
+
