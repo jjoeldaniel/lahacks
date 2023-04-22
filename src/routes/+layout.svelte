@@ -4,8 +4,10 @@
   import Footer from "../components/Footer.svelte";
 </script>
 
-<main>
-  <Navbar />
-  <slot />
-  <Footer />
-</main>
+<div class="flex flex-col min-h-screen">
+  <main class="flex-grow">
+    <Navbar />
+    <slot />
+    <Footer />
+  </main>
+</div>
