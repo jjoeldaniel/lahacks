@@ -6,10 +6,13 @@
   import { onMount } from "svelte";
 
   let hashmap = {};
+  let city = "";
+  let county = "";
+  let state_id = "";
 
   // Load the CSV file using fetch in onMount
   onMount(async () => {
-    const response = await fetch("./uscities.csv");
+    const response = await fetch("../uscities.csv");
     const csv = await response.text();
 
     Papa.parse(csv, {
@@ -18,10 +21,12 @@
       skipEmptyLines: true,
       complete: (results) => {
         results.data.forEach((row) => {
-          const id = row.ID;
-          const city = row.city;
-
-          hashmap[id] = city;
+          if (data.id == row.ID) {
+            console.log(row.city);
+            city = row.city;
+            county = row.county_name;
+            state_id = row.state_id;
+          }
         });
       },
     });
@@ -29,4 +34,4 @@
 </script>
 
 <h1>{data.id}</h1>
-<p>{hashmap[data.id]}</p>
+<p>{city}, {county} {state_id}</p>
