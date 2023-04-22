@@ -4,9 +4,9 @@
 
   import Papa from "papaparse";
   import { onMount } from "svelte";
-  //import Maps from "../../../components/Maps.svelte";
+ import Maps from "../../../components/Maps.svelte";
   
-  let GOOGLE_MAPS_KEY="AIzaSyDar1uJPmjRnY9JwAqTfv-JsBBCKlq1874";
+ 
 
   let hashmap = {};
   let city = "";
@@ -34,6 +34,8 @@
     });
   });
 
+  export let location;
+
 </script>
 
 <svelte:head>
@@ -46,16 +48,6 @@
   <h1 class="text-white font-bold text-2xl">{data.id}</h1>
   <p>{city}, {county} {state_id}</p>
 
-  <!-- svelte-ignore a11y-missing-attribute -->
-  <iframe
-  width="600"
-  height="450"
-  style="border:0"
-  loading="lazy"
-  allowfullscreen
-  referrerpolicy="no-referrer-when-downgrade"
-  src="https://www.google.com/maps/embed/v1/place?key={GOOGLE_MAPS_KEY}
-    &q={city}+{county}">
-</iframe>
+  <Maps location={city}+{county} /> 
 
 </div>
