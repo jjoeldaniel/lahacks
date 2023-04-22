@@ -9,7 +9,6 @@
     onSearch(searchTerm);
   };
 
-
 </script>
 
 <main class="h-screen w-screen overflow-auto flex flex-col items-center justify-center bg-gray-800">
@@ -19,4 +18,3 @@
     <button class="col-start-4 px-4 py-2 bg-blue-500 text-white hover:bg-blue-600 rounded-lg" on:click={handleSearch}>Search</button>
   </div> 
 </main>
-
