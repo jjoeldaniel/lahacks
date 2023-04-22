@@ -1,12 +1,14 @@
 <script>
-    import { GOOGLE_MAPS_KEY } from  '$env/static/private'; //error when passed to a non +server.ts file 
-
-    let location="Space+Needle,Seattle+WA" //works just bind the other string we search to this
+    //import { GOOGLE_MAPS_KEY } from  '$env/static/private'; //error when passed to a non +server.ts file 
+   
+   let GOOGLE_MAPS_KEY="AIzaSyDar1uJPmjRnY9JwAqTfv-JsBBCKlq1874"
+    let location="Space Needle,Seattle WA" //works just bind the other string we search to this
 
 
 </script>
 
 
+<!-- svelte-ignore a11y-missing-attribute -->
 <iframe
   width="600"
   height="450"
