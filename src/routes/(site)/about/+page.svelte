@@ -1,18 +1,17 @@
 <script>
   import "../../../app.css";
-  import hero from "../../../assets/hero.jpeg"
-
 </script>
 
 <main class=" items-center">
     <div class="relative h-72 flex items-center justify-center mt-5">
-        <div class="absolute inset-0 bg-hero bg-bottom sm:bg-left-bottom opacity-70"></div>
-        <div class="relative">
-            <h1 class="text-5xl text-center font-bold text-white sm:text-4xl">About Trip Finder</h1>
+        <img alt="hero" src="/hero.jpeg" class="w-full h-full object-cover object-bottom opacity-60"/>
+        <div class="absolute inset-0 flex items-center justify-center">
+            <h1 class="text-5xl text-center font-bold text-white sm:text-4xl">About Venture Co.</h1>
         </div>
     </div>
     
-    <div class="h-fit m-16 items-center bg-slate-600 rounded-md flex flex-col justify-center">
+    
+    <div class="h-fit m-16 items-center bg-slate-600 rounded-md flex flex-col justify-center mb-16">
         <div class="w-full flex items-start ml-10">
             <h1 class="text-white text-2xl text-left p-2 font-bold underline">Our Story</h1>
         </div>

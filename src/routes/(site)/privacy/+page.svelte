@@ -1,7 +1,7 @@
 <script>    
 
 </script>
- <div class = "bg-gradient-to-t from-gray-300 via-slate-500 to-gray-700 to-80%">
+ <div class = "">
  <div class = "wrapper"> 
  <div class = "coltitle">
 
@@ -36,7 +36,6 @@ The Website is committed to protecting the privacy of its users and ensuring tha
 .wrapper
 {
     width:screen;
-    height: 100vh;
 
 }
 .privacy {      
