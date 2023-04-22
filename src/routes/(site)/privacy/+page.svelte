@@ -1,15 +1,70 @@
-<script>
-    
+<script>    
+
 </script>
+ 
+ <div class = "wrapper"> 
+ <div class = "coltitle">
 
-<p class="mb-3 text-lg text-gray-500 md:text-xl dark:text-gray-400">Privacy Policy</p>
+<p class="privacy"><b> Privacy Policy </b></p>
+<h1 style = font-size:14px><center> Last updated April 22, 2023 </center></h1>
 
-This privacy policy sets out how this application handles and uses any personal information collected from users of the Website.
+<div class = "pp"> This privacy policy sets out how this application handles and uses any personal information collected from users of the Website. 
+</div>
 
-Scope of this Policy: This Policy applies solely to the Website and not to any third-party websites or services that may be linked to the Website.
+<div class = "coltitle"> <b>Changes to this Policy </b></div>
+<div class = pp>
+The Website may update this Policy from time to time and will post any changes on this page.
+</div>
 
-Data Collection and Use: The Website collects only emails of authorized users and does not store passwords, credentials or any other private information on authoirzed users. This website does not use cookies, gather IP addresses, or collect any other personal information.
+<div class = coltitle> <b>Scope of this Policy </b></div>
+<div class = pp>
+This Policy applies solely to the Website and not to any third-party websites or services that may be linked to the Website.
+</div>
 
-Changes to this Policy: The Website may update this Policy from time to time and will post any changes on this page.
+<div class = coltitle> <b>Data Collection and Use </b></div>
+<div class = pp>
+The Website collects only emails of authorized users and does not store passwords, credentials or any other private information on authorized users. This website does not use cookies, gather IP addresses, or collect any other personal information.
+</div>
+<div class = coltitle> <b>Conclusion </b></div>
+<div class = pp>
+The Website is committed to protecting the privacy of its users and ensuring that their personal information is secure.</div>
+</div>
+</div>
 
-Conclusion: The Website is committed to protecting the privacy of its users and ensuring that their personal information is secure.
+<style>  
+
+.wrapper
+{
+    width:screen;
+    height: 100vh;
+    background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+
+}
+.privacy {      
+    margin: auto;
+    width: 200px;            
+    padding: 8px;    
+    font-size: 28px; 
+    text-align: justify;   
+}    
+
+.pp {      
+    margin: auto;
+    width: 60%;      
+    padding: 8px;      
+    word-wrap: break-word;      
+    font-size: 14px;    
+    font-weight: 400;
+    text-align: justify
+}   
+
+.coltitle {
+    margin: auto;
+    font-size: 20px;
+    width: 58%;
+    text-align: justify
+}
+
+
+
+</style> 
