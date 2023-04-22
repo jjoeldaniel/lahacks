@@ -2,7 +2,7 @@
   import "../app.css";
 </script>
 
-<footer class=" bg-slate-600 rounded-lg shadow m-4 dark:bg-gray-800">  
+<footer class="z-10 bg-slate-600 rounded-lg shadow m-4 dark:bg-gray-800">  
   <div
     class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between"
   >
