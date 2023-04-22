@@ -1,10 +1,12 @@
 <script lang="ts">
   let src = "/plane.png";
+  import "../app.css"
 </script>
 
-<div class="pb-12 px-10 pt-4 text-right bg-blue-600 text-white">
-  <div class="float-left pl-4 pb-0 font-bold text-xl">
-    <a href="/" class="button">Trip Finder</a>
+<div class="flex items-center pl-20 pt-10 text-right text-white">
+  <div class="grid grid-cols-2 gap-2 font-bold text-xl">
+    <a href="/" class="col-span-1 button text-3xl">Trip Finder</a>
+    <img class="col-start-2 bg-transparent" {src} width="50" alt="img" />
   </div>
-  <img class="float-left pl-2" {src} width="40" alt="img" />
+  
 </div>
