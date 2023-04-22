@@ -37,11 +37,9 @@
   <title>{city}, {county}, {state_id}</title>
 </svelte:head>
 
-
-<div class="h-screen w-full overflow-hidden flex items-center justify-center bg-slate-800">
-<h1 class="text-white font-bold	text-2xl"> {data.id} </h1>
-<p>{city}, {county} {state_id}</p>
-
-
-
+<div
+  class="h-screen w-full overflow-hidden flex items-center justify-center bg-slate-800"
+>
+  <h1 class="text-white font-bold text-2xl">{data.id}</h1>
+  <p>{city}, {county} {state_id}</p>
 </div>
