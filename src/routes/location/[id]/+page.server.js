@@ -18,9 +18,10 @@ export const actions = {
     default: async (event) => {
         // parse the request body
         // TODO: Finish this
-        const data = await event.request.body
+        const data = event.request.body;
+        
         return {
-            data: "1234"
+            data: "this is a reply!",
         };
 
     }

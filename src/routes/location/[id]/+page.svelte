@@ -30,11 +30,26 @@
             let response = fetch("/location/default", {
               method: "POST",
               headers: {
-                "Content-Type": "text/plain",
+                "Content-Type": "application/x-www-form-urlencoded",
               },
-              body: { city } + "," + { county } + "," + { state_id },
-            });
-            console.log(response);
+              body: `text=${encodeURIComponent(
+                { city } + "," + { county } + "," + { state_id }
+              )}`,
+            })
+              .then((response) => {
+                if (response.ok) {
+                  console.log(response.json());
+                } else {
+                  throw new Error("failed to post and recieve reply");
+                }
+              })
+              .then((data) => {
+                console.log(data);
+              })
+              .catch((error) => {
+                console.error("Error occurred:", error);
+                // TODO handle error
+              });
           }
         });
       },
