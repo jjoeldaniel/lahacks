@@ -1,5 +1,6 @@
 <!-- SearchBar.svelte -->
 <script>
+  import { redirect } from "@sveltejs/kit";
   import "../app.css";
   export let onSearch;
   let searchTerm = "";
@@ -8,6 +9,7 @@
 
   import Papa from "papaparse";
   import { onMount } from "svelte";
+  import { goto } from "$app/navigation";
 
   // Load the CSV file using fetch in onMount
   onMount(async () => {
@@ -119,6 +121,9 @@
         {#if i != hiLiteIndex}
           <div
             class="p-2 cursor-pointer"
+            on:submit={() => {
+              goto(location);
+            }}
             on:click={() => {
               setInputVal(location);
             }}
