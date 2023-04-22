@@ -1,7 +1,6 @@
 <!-- SearchBar.svelte -->
 <script>
   import "../app.css";
-  import hero from "../assets/hero.jpeg";
   export let onSearch;
   let searchTerm = "";
   let filteredLocations = [];
@@ -50,26 +49,32 @@
   };
 </script>
 
-<form class ="h-screen w-full overflow-hidden flex items-center justify-center bg-slate-800"on:submit|preventDefault={() => handleSearch()}>
+<form
+  class="h-screen w-full overflow-hidden flex items-center justify-center bg-slate-800"
+  on:submit|preventDefault={() => handleSearch()}
+>
   <div class="grid grid-cols-6 row-start-5 gap-4 w-3/4 place-items-center">
-    <input class="bg-gray-600 col-span-5  px-4 py-2 w-full rounded-lg text-white" type="text" bind:value={searchTerm} />
-    <button class="col-start-6 px-4 py-2 bg-blue-500 text-white hover:bg-blue-600 rounded-lg">  Search </button>
-  </div>   
-</form>
+    <input
+      class="bg-gray-600 col-span-5 px-4 py-2 w-full rounded-lg text-white"
+      type="text"
+      on:input={filterLocations}
+      bind:value={searchTerm}
+    />
+    <button
+      class="col-start-6 px-4 py-2 bg-blue-500 text-white hover:bg-blue-600 rounded-lg"
+    >
+      Search
+    </button>
 
-{#if filteredLocations.length > 0}
-    <!-- print all matches as list items -->
-    <ul id="autocomplete" class="col-span-4">
-      {#each filteredLocations as location}
-        <li
-          class="bg-gray-600 px-4 py-2 rounded-lg text-white hover:bg-gray-700 cursor-pointer"
-          on:click={() => {
-            searchTerm = location;
-            onSearch(hashmap[location]);
-          }}
-        >
-          {location}
-        </li>
-      {/each}
-    </ul>
-  {/if}
+    <!-- show the list of matches below the search bar -->
+    {#if filteredLocations.length > 0}
+      <div class="absolute bg-gray-300 w-3/4 rounded-lg">
+        {#each filteredLocations as location}
+          <div class="p-2 hover:bg-gray-500">
+            <a href="/location/{hashmap[location]}">{location}</a>
+          </div>
+        {/each}
+      </div>
+    {/if}
+  </div>
+</form>
