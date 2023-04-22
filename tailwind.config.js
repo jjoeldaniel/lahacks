@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 export default {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
@@ -21,6 +22,9 @@ export default {
       '3xl': {'min': '1536px'},                   // Wide Boi (lg)
     },
     extend: {
+      backgroundImage: {
+        'hero': "url('./src/assets/hero.jpeg')",
+      },
     },
   },
   plugins: [],
