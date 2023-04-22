@@ -1,5 +1,6 @@
 <!-- SearchBar.svelte -->
 <script>
+  import { redirect } from "@sveltejs/kit";
   import "../app.css";
   export let onSearch;
   let searchTerm = "";
@@ -8,6 +9,7 @@
 
   import Papa from "papaparse";
   import { onMount } from "svelte";
+  import { goto } from "$app/navigation";
 
   // Load the CSV file using fetch in onMount
   onMount(async () => {
@@ -28,7 +30,7 @@
   });
 
   const handleSearch = () => {
-    onSearch(searchTerm);
+    onSearch(hashmap[searchTerm]);
   };
 
   const filterLocations = (e) => {
@@ -47,7 +49,36 @@
     }
     filteredLocations = tempArr;
   };
+
+  const setInputVal = (name) => {
+    searchTerm = name;
+    filteredLocations = [];
+    hiLiteIndex = null;
+    document.querySelector("#search-input").focus();
+  };
+
+  let hiLiteIndex = null;
+  const navigateList = (e) => {
+    if (e.key === "ArrowDown" && hiLiteIndex == filteredLocations.length - 1) {
+      hiLiteIndex = 0;
+    } else if (
+      e.key === "ArrowDown" &&
+      hiLiteIndex <= filteredLocations.length - 1
+    ) {
+      hiLiteIndex === null ? (hiLiteIndex = 0) : (hiLiteIndex += 1);
+    } else if (e.key === "ArrowUp" && hiLiteIndex !== null) {
+      hiLiteIndex === 0
+        ? (hiLiteIndex = filteredLocations.length - 1)
+        : (hiLiteIndex -= 1);
+    } else if (e.key === "Enter") {
+      setInputVal(filteredLocations[hiLiteIndex]);
+    } else {
+      return;
+    }
+  };
 </script>
+
+<svelte:window on:keydown={navigateList} />
 
 <form
   class="h-screen w-full overflow-hidden flex items-center justify-center bg-slate-800"
@@ -55,6 +86,7 @@
 >
   <div class="grid grid-cols-6 row-start-5 gap-4 w-3/4 place-items-center">
     <input
+      id="search-input"
       class="bg-gray-600 col-span-5 px-4 py-2 w-full rounded-lg text-white"
       type="text"
       placeholder="New York, Queens NY"
@@ -71,10 +103,33 @@
   <!-- show the list of matches below the search bar -->
   {#if filteredLocations.length > 0}
     <div class="absolute bg-gray-300 w-3/4 rounded-lg">
-      {#each filteredLocations as location}
-        <div class="p-2 hover:bg-gray-500">
-          <a href="/location/{hashmap[location]}">{location}</a>
-        </div>
+      {#each filteredLocations as location, i}
+        <!-- on click, set the value of the search bar to the location and close the list -->
+
+        <!-- if i === hiLiteIndex, make bold -->
+        {#if i === hiLiteIndex}
+          <div
+            class="p-2 hover:bg-gray-400 cursor-pointer"
+            style="font-weight: bold"
+            on:click={() => {
+              setInputVal(location);
+            }}
+          >
+            {location}
+          </div>
+        {/if}
+        {#if i != hiLiteIndex}
+          <div
+            class="p-2 cursor-pointer"
+            on:submit={() => {
+              goto(location);
+            }}
+            on:click={() => {
+              setInputVal(location);
+            }}
+          >
+            {location}
+          </div>{/if}
       {/each}
     </div>
   {/if}
