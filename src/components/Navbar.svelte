@@ -3,6 +3,7 @@
   import "../app.css"
 </script>
 
+
 <img src = "/la hacks logo.png" alt="venture co logo"> 
 
 <style>
@@ -11,5 +12,6 @@ img {
   width: 200px;
   height: auto;
 }
-  
+
 </style>
+
