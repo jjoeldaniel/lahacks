@@ -28,8 +28,8 @@ export async function load({ params }) {
     const state_id = second.split(' ')[2];
 
     let about = await gpt("Generate a brief description about the city of "+ city  + ", " + county + " " + state_id);
-    // let history = await gpt("Generate a brief history summary of the city of "+ city  + ", " + county + " " + state_id);
-    // let activities = await gpt("Generate a list of fun activities to do in the city of "+ city  + ", " + county + " " + state_id);
+    let history = await gpt("Generate a brief history summary of the city of "+ city  + ", " + county + " " + state_id);
+    let activities = await gpt("Generate a list of fun activities to do in the city of "+ city  + ", " + county + " " + state_id);
 
     return {
         props: {
@@ -37,8 +37,8 @@ export async function load({ params }) {
             county,
             state_id,
             about,
-            history,
-            activities,
+            history: "1",
+            activities: "1",
         }
     }
 }

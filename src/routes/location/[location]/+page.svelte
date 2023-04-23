@@ -5,6 +5,9 @@
   const city = data.props.city;
   const county = data.props.county;
   const state_id = data.props.state_id;
+  const about = data.props.about;
+  const history = data.props.history;
+  const activities = data.props.activities;
 
   import Maps from "../../../components/Maps.svelte";
 </script>
@@ -24,15 +27,15 @@
   <ul>
     <li>
       <h2 class="font-bold text-2xl">About</h2>
-      <p>{data.props.about}</p>
+      <p>{about}</p>
     </li>
     <li>
       <h2 class="font-bold text-2xl">History</h2>
-      <p>{data.props.history}</p>
+      <p>{history}</p>
     </li>
     <li>
       <h2 class="font-bold text-2xl">Activities</h2>
-      <p>{data.props.activities}</p>
+      <p>{activities}</p>
     </li>
   </ul>
 </div>
