@@ -16,7 +16,7 @@
 <div class='iframe-wrapper'> 
   <p align="center"> 
 <iframe
-  width="600"
+  width="900"
   height="450"
   style="border:0"
   loading="lazy"

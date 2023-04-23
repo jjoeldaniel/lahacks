@@ -8,7 +8,7 @@
   >
     <span class="text-sm text-white sm:text-center dark:text-gray-400"
       >© 2023 <a href="/" class="hover:underline"
-        >Tripfinder™</a
+        >Venture Co.™</a
       >. All Rights Reserved.
     </span>
     <ul

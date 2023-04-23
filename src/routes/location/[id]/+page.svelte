@@ -67,9 +67,14 @@ import Center from "../../../components/Center.svelte";
   <title>{city}, {county}, {state_id}</title>
 </svelte:head>
 
-<div class="wrapper"> 
+<Center> 
+<div class="left-wrapper" >
+
+ <div class="outer-wrapper">
+    <div class="wrapper"> 
+  
 <div
-  class="h-screen w-full overflow-hidden flex-col place-items-center"
+  class="h-auto w-full flex-col place-items-center p-4 rounded-2xl"
   style="background-color: white"
 >
   <Maps location={city}+{county} /> 
@@ -78,28 +83,48 @@ import Center from "../../../components/Center.svelte";
 <br><br>
   <ul>
     <li>
-      <h2 class="font-bold text-2xl">About</h2>
+      <div class="font-bold text-2xl">About</div>
     </li>
     <li>
-      <h2 class="font-bold text-2xl">History</h2>
+      <div class="font-bold text-2xl">History</div>
     </li>
     <li>
-      <h2 class="font-bold text-2xl">Activities</h2>
+      <div class="font-bold text-2xl">Activities</div>
     </li>
-  </ul>
+    
 
 </div>
-
+</div>
+  </div>
 </div>
 
-
-
-
+</Center>
 <style>
+
+  .left-wrapper{
+    text-align:center;
+    padding:10px;
+
+  }
+
+  .outer-wrapper
+  {
+    padding:10px;
+    height:fit-content;
+    display: inline-block; 
+    text-align: left;
+    overflow-x: hidden;
+
+  }
 .wrapper{
-  text-align: center;
+  text-align: left;
   justify-content: center;
 
+  overflow-x: hidden;
+
 }
+
+
+
 
 </style>
