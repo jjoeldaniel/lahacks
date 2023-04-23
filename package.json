@@ -24,8 +24,10 @@
 	"type": "module",
 	"dependencies": {
 		"@picocss/pico": "^1.5.10",
+		"@supabase/supabase-js": "^2.21.0",
 		"openai": "^3.2.1",
 		"papaparse": "^5.4.1",
+		"pg": "^8.10.0",
 		"showdown": "^2.1.0"
 	}
 }
