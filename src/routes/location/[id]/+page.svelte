@@ -5,13 +5,12 @@
   import Papa from "papaparse";
   import { onMount } from "svelte";
  import Maps from "../../../components/Maps.svelte";
-  
- 
 
   let hashmap = {};
-  let city = "";
-  let county = "";
-  let state_id = "";
+  let city = "New York City";
+  let county = "New York";
+  let state_id = "NY";
+
   // Load the CSV file using fetch in onMount
   onMount(async () => {
     const response = await fetch("../uscities.csv");
@@ -24,10 +23,35 @@
       complete: (results) => {
         results.data.forEach((row) => {
           if (data.id == row.ID) {
-            console.log(row.city);
             city = row.city;
             county = row.county_name;
             state_id = row.state_id;
+
+            // post to server
+            // TODO: Fix this
+            let response = fetch("/location/default", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+              },
+              body: `text=${encodeURIComponent(
+                { city } + "," + { county } + "," + { state_id }
+              )}`,
+            })
+              .then((response) => {
+                if (response.ok) {
+                  console.log(response.json());
+                } else {
+                  throw new Error("failed to post and recieve reply");
+                }
+              })
+              .then((data) => {
+                console.log(data);
+              })
+              .catch((error) => {
+                console.error("Error occurred:", error);
+                // TODO handle error
+              });
           }
         });
       },
@@ -43,11 +67,23 @@
 </svelte:head>
 
 <div
-  class="h-screen w-full overflow-hidden flex items-center justify-center bg-slate-800"
+  class="h-screen w-full overflow-hidden flex items-center justify-center"
+  style="background-color: white"
 >
-  <h1 class="text-white font-bold text-2xl">{data.id}</h1>
-  <p>{city}, {county} {state_id}</p>
 
   <Maps location={city}+{county} /> 
 
+  <h1 class="font-bold text-3xl">{city}, {county}, {state_id}</h1>
+
+  <ul>
+    <li>
+      <h2 class="font-bold text-2xl">About</h2>
+    </li>
+    <li>
+      <h2 class="font-bold text-2xl">History</h2>
+    </li>
+    <li>
+      <h2 class="font-bold text-2xl">Activities</h2>
+    </li>
+  </ul>
 </div>
