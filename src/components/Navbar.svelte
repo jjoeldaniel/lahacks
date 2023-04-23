@@ -1,10 +1,13 @@
 <script lang="ts">
-  let src = "/plane.png";
+  let src = "/la hacks logo.png";
+  import "../app.css";
 </script>
 
-<div class="pb-12 px-10 pt-4 text-right bg-blue-600 text-white">
-  <div class="float-left pl-4 pb-0 font-bold text-xl">
-    <a href="/" class="button">Trip Finder</a>
+<div class="flex items-center pl-20 text-right text-white">
+  <div class="grid grid-cols-2 gap-2">
+    <a href="/" class="mt-3">
+      <img src="/la hacks logo.png" width="180px" alt="venture co logo" />
+    </a>
   </div>
-  <img class="float-left pl-2" {src} width="40" alt="img" />
 </div>
+

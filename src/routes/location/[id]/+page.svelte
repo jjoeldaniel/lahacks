@@ -4,7 +4,9 @@
 
   import Papa from "papaparse";
   import { onMount } from "svelte";
+ import Maps from "../../../components/Maps.svelte";
 
+  let hashmap = {};
   let city = "New York City";
   let county = "New York";
   let state_id = "NY";
@@ -55,6 +57,9 @@
       },
     });
   });
+
+  export let location;
+
 </script>
 
 <svelte:head>
@@ -65,6 +70,9 @@
   class="h-screen w-full overflow-hidden flex items-center justify-center"
   style="background-color: white"
 >
+
+  <Maps location={city}+{county} /> 
+
   <h1 class="font-bold text-3xl">{city}, {county}, {state_id}</h1>
 
   <ul>
