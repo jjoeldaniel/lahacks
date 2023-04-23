@@ -23,6 +23,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"fs": "^0.0.1-security",
 		"openai": "^3.2.1",
 		"papaparse": "^5.4.1"
 	}

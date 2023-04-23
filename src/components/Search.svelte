@@ -29,7 +29,7 @@
   });
 
   const handleSearch = () => {
-    onSearch(hashmap[searchTerm]);
+    onSearch(searchTerm);
   };
 
   const filterLocations = (e) => {
