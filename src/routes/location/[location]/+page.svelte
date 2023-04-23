@@ -24,12 +24,15 @@
   <ul>
     <li>
       <h2 class="font-bold text-2xl">About</h2>
+      <p>{data.props.about}</p>
     </li>
     <li>
       <h2 class="font-bold text-2xl">History</h2>
+      <p>{data.props.history}</p>
     </li>
     <li>
       <h2 class="font-bold text-2xl">Activities</h2>
+      <p>{data.props.activities}</p>
     </li>
   </ul>
 </div>
