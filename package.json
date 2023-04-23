@@ -23,7 +23,9 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@picocss/pico": "^1.5.10",
 		"openai": "^3.2.1",
-		"papaparse": "^5.4.1"
+		"papaparse": "^5.4.1",
+		"showdown": "^2.1.0"
 	}
 }
