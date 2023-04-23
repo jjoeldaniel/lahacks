@@ -6,13 +6,6 @@
   export const handleSearch = (/** @type {any} */ searchTerm) => {
     goto(`/location/${searchTerm}`);
   };
-
-
-
-  import Maps from "../components/Maps.svelte";
 </script>
-
-
-
 
 <Search onSearch={handleSearch} />
