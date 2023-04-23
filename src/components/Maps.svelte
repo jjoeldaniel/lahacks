@@ -13,13 +13,25 @@
 
 
 <!-- svelte-ignore a11y-missing-attribute -->
+<div class='iframe-wrapper'> 
+  <p align="center"> 
 <iframe
   width="600"
   height="450"
   style="border:0"
   loading="lazy"
   allowfullscreen
+  
   referrerpolicy="no-referrer-when-downgrade"
   src="https://www.google.com/maps/embed/v1/place?key={GOOGLE_MAPS_KEY}
     &q={location}">
 </iframe>
+</p>
+</div>
+
+
+<style>
+  .iframe-wrapper{
+    padding:20px;
+  }
+</style>

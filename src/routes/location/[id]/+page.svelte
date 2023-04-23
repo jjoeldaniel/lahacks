@@ -60,21 +60,22 @@
 
   export let location;
 
+import Center from "../../../components/Center.svelte";
 </script>
 
 <svelte:head>
   <title>{city}, {county}, {state_id}</title>
 </svelte:head>
 
+<div class="wrapper"> 
 <div
-  class="h-screen w-full overflow-hidden flex items-center justify-center"
+  class="h-screen w-full overflow-hidden flex-col place-items-center"
   style="background-color: white"
 >
-
   <Maps location={city}+{county} /> 
 
   <h1 class="font-bold text-3xl">{city}, {county}, {state_id}</h1>
-
+<br><br>
   <ul>
     <li>
       <h2 class="font-bold text-2xl">About</h2>
@@ -86,4 +87,19 @@
       <h2 class="font-bold text-2xl">Activities</h2>
     </li>
   </ul>
+
 </div>
+
+</div>
+
+
+
+
+<style>
+.wrapper{
+  text-align: center;
+  justify-content: center;
+
+}
+
+</style>
